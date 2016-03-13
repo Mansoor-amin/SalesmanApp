@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angularfire": "^1.1.3",
+    "body-parser": "^1.14.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "firebase": "^2.3.2",
+    "mongoose": "^4.3.4",
+    "mors": "^0.1.13",
+    "q": "^1.4.1"
+  }
+}

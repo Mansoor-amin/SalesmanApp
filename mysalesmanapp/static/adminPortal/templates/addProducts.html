@@ -1,0 +1,27 @@
+<ion-view view-title="Add Products">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Product Name</span>
+                <input type="text" placeholder="Product Name" ng-model="product.Name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Weight g.</span>
+                <input type="number" placeholder="Weight g." ng-model="product.Weight">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Price Rs.</span>
+                <input type="number" placeholder="Price Rs." ng-model="product.Price">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Retail Price Rs.</span>
+                <input type="number" placeholder="Retail Price Rs." ng-model="product.RetailPrice">
+            </label>
+        </div>
+        <div class="button-bar">
+            <button class="button button-positive" ng-click="addProduct()">Add Product</button>
+        </div>
+
+
+    </ion-content>
+</ion-view>

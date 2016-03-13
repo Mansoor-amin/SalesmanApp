@@ -1,0 +1,41 @@
+<ion-view view-title="View Orders">
+    <ion-content class="padding">
+        <ion-list>
+            <ion-item class="item item-divider item-positive">
+                Orders
+            </ion-item>
+
+            <ion-item ng-if="localToken == order.CompanyName" class="row" ng-repeat="order in orders">
+                <div class="row responsive-sm padding">
+
+                    <div class="col card item">
+                        <h2>Shop:   <b>{{order.shopName | uppercase}}</b> </h2>
+                        <p>Phone No:  {{order.contact}}</p>
+                        <p>Address:  {{order.shopAddress}}</p>
+                    </div>
+
+                    <div class="col card item">
+                        <h2> <b>Order information</b></h2>
+                        <p>Product: {{order.productName}}</p>
+                        <p>Weight: {{order.productWeight}}</p>
+                        <p>Quantity: {{order.productQuantity}}</p>
+                    </div>
+
+                    <div class="col card item">
+                        <h2> <b>Salesman information</b></h2>
+                        <p>Name: {{order.salesman.Name}}</p>
+                        <p>Phone No: {{order.salesman.PhoneNo}}</p>
+                    </div>
+
+                    <div class="col row card item">
+                        <button class="col button button-outline button-positive" ui-sref="viewLocation({lat :{{order.location.lat}}, long: {{order.location.long}}})" >Order Location</button>
+                        <button class="col button button-outline button-positive" ng-click="remove(order)" >delivered</button>
+                    </div>
+
+                </div>
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-view>

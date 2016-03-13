@@ -1,0 +1,47 @@
+<ion-view view-title="Create Order">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Shop Name</span>
+                <input type="text" placeholder="Shop Name" ng-model="order.shopName">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Shop Address</span>
+                <input type="text" placeholder="Shop Address" ng-model="order.shopAddress">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Contact No.</span>
+                <input type="number" placeholder="Contact No." ng-model="order.contact">
+            </label>
+        </div>
+      <ion-list class="card">
+        <ion-item class="item item-divider item-positive">
+          Products
+        </ion-item>
+
+        <ion-item class="row header padding card">
+          <div class="col"><h2>Product</h2></div>
+          <div class="col"><h2>Weight</h2></div>
+          <div class="col"><h2>Quantity</h2></div>
+        </ion-item>
+        <ion-item class="row">
+
+          <div class="col item">
+              <input type="text" placeholder="Product Name" ng-model="order.productName">
+          </div>
+          <div class="col item">
+              <input type="number" placeholder="weight" ng-model="order.productWeight">
+          </div>
+          <div class="col item">
+              <input type="number" placeholder="Quantity" ng-model="order.productQuantity">
+          </div>
+        </ion-item>
+
+      </ion-list>
+        <div class="button-bar">
+            <button class="button button-positive" ng-click="createOrder()">Place Order</button>
+        </div>
+
+
+    </ion-content>
+</ion-view>

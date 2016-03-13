@@ -1,0 +1,97 @@
+<ion-view cache-view="false" view-title="Salesman App">
+    <ion-nav-buttons side="Right">
+        <button class="button button-assertive" ng-click="LogOut()">
+            logout
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+
+        <div class="row responsive-sm">
+          <div class="col item card">
+            <div class="padding">
+              <button ui-sref="createOrder" class="button button-full icon-left ion-plus-circled button-positive">Create Order</button>
+            </div>
+          </div>
+
+          <div class="col item card">
+            <div class="padding">
+              <button ui-sref="viewOrders" class="button button-full icon-left ion-plus-circled button-positive">View Orders</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <ion-list>
+                    <ion-item class="item item-divider item-positive">
+                        My Company
+                    </ion-item>
+
+                    <ion-item class="item">
+                        <ion-list>
+                            <ion-item class="item item-divider item-positive">
+                                Information
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Name: </div>
+                                <div class="col padding">{{company.Name}}</div>
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Email: </div>
+                                <div class="col padding">{{company.Email}}</div>
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Description: </div>
+                                <div class="col padding">{{company.Description}}</div>
+                            </ion-item>
+                        </ion-list>
+                      <br/>
+                        <ion-list class="card">
+                            <ion-item class="item item-divider item-positive">
+                                Products
+                            </ion-item>
+
+                            <ion-item class="row header padding card">
+                                <div class="col"><h2>Sno.</h2></div>
+                                <div class="col"><h2>Name</h2></div>
+                                <div class="col"><h2>Weight</h2></div>
+                                <div class="col"><h2>Price</h2></div>
+                                <div class="col"><h2>R Price</h2></div>
+                            </ion-item>
+                            <ion-item class="row"  ng-repeat="product in company.Products">
+                                <div class="col item">{{$index + 1}}</div>
+                                <div class="col item">{{product.Name}}</div>
+                                <div class="col item">{{product.Weight}}g</div>
+                                <div class="col item">{{product.Price}}</div>
+                                <div class="col item">{{product.RetailPrice}}</div>
+                            </ion-item>
+
+                        </ion-list>
+                    </ion-item>
+
+                </ion-list>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+
+
+<!-- <div class="row">
+            <div class="col">
+                <ion-list>
+                    <ion-item class="item item-divider item-positive">
+                        My Company
+                    </ion-item>
+                    <ion-item class="item-avatar item-button-right" ng-if="company.admin.FirebaseToken === localToken"  ng-repeat="company in companies">
+
+                        <h2>Name ::         {{company.name}}</h2>
+                        <p>Email::          {{company.email}}</p>
+                        <p>Admin ::         {{company.admin.Name}}</p>
+                        <p>Description::    {{company.description}}</p>
+
+                        <button ui-sref="edit/:" class="button icon-right ion-settings button-positive">Settings</button>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>-->

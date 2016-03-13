@@ -1,0 +1,137 @@
+<ion-view cache-view="false" view-title="Salesman App">
+    <ion-nav-buttons side="Right">
+        <button class="button button-assertive" ng-click="LogOut()">
+            logout
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+
+        <div class="row responsive-sm">
+            <div class="col item card" ng-if="!logic">
+                <div class="padding">
+                    <button ui-sref="createCompany" class="button button-full icon-left ion-plus-circled button-positive">Create Company</button>
+                </div>
+            </div>
+            <div class="col item card" ng-if="logic">
+                <div class="padding">
+                    <button ui-sref="modifyCompany" class="button button-full icon-left ion-settings button-positive">Modify Company</button>
+                </div>
+            </div>
+            <div class="col item card" ng-if="logic">
+                <div class="padding">
+                    <button ui-sref="createSalesman" class="button button-full icon-left ion-plus-circled button-positive">Create Salesman</button>
+                </div>
+            </div>
+            <div class="col item card" ng-if="logic">
+                <div class="padding">
+                    <button ui-sref="addProducts" class="button button-full icon-left ion-plus-circled button-positive">Add Products</button>
+                </div>
+            </div>
+            <div class="col item card" ng-if="logic">
+                <div class="padding">
+                    <button ui-sref="viewOrders" class="button button-full icon-left ion-eye button-positive">View Orders</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <ion-list>
+                    <ion-item class="item item-divider item-positive">
+                        My Company
+                    </ion-item>
+
+                    <ion-item class="item" ng-if="logic">
+                        <ion-list>
+                            <ion-item class="item item-divider item-positive">
+                                Information
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Name: </div>
+                                <div class="col padding">{{company.Name}}</div>
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Email: </div>
+                                <div class="col padding">{{company.Email}}</div>
+                            </ion-item>
+                            <ion-item class="row">
+                                <div class="col padding">Description: </div>
+                                <div class="col padding">{{company.Description}}</div>
+                            </ion-item>
+                        </ion-list>
+
+                        <ion-list class="card" ng-if="logic">
+                            <ion-item class="item item-divider item-positive">
+                                Products
+                            </ion-item>
+
+                            <ion-item class="row header padding card">
+                                <div class="col"><h2>S No.</h2></div>
+                                <div class="col"><h2>Name</h2></div>
+                                <div class="col"><h2>Weight</h2></div>
+                                <div class="col"><h2>Price</h2></div>
+                                <div class="col"><h2>Retail Price</h2></div>
+                                <div class="col"><h2>Remove</h2></div>
+                            </ion-item>
+                            <ion-item class="row"  ng-repeat="product in company.Products">
+                                <div class="col item">{{$index + 1}}</div>
+                                <div class="col item">{{product.Name}}</div>
+                                <div class="col item">{{product.Weight}}</div>
+                                <div class="col item">{{product.Price}}</div>
+                                <div class="col item">{{product.RetailPrice}}</div>
+                                <div class="col item"><button class="button" ng-click="getLocation()">remove</button></div>
+                            </ion-item>
+
+                        </ion-list>
+
+                        <ion-list class="card" ng-if="logic">
+                            <ion-item class="item item-divider item-positive">
+                                SalesMans
+                            </ion-item>
+
+                            <ion-item class="row header padding card">
+                                <div class="col"><h2>S No.</h2></div>
+                                <div class="col"><h2>Name</h2></div>
+                                <div class="col"><h2>Email</h2></div>
+                                <div class="col"><h2>Phone No</h2></div>
+                                <div class="col"><h2>Current location</h2></div>
+                                <div class="col"><h2>Remove</h2></div>
+                            </ion-item>
+                            <ion-item class="row"  ng-repeat="salesman in company.SalesMans">
+                                <div class="col item">{{$index + 1}}</div>
+                                <div class="col item">{{salesman.Name}}</div>
+                                <div class="col item">{{salesman.Email}}</div>
+                                <div class="col item">{{salesman.PhoneNo}}</div>
+                                <div class="col item"><button class="button" ng-click="getLocation()">Get Location</button></div>
+                                <div class="col item"><button class="button" ng-click="getLocation()">remove</button></div>
+                            </ion-item>
+
+                        </ion-list>
+                    </ion-item>
+
+                </ion-list>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+
+
+<!-- <div class="row">
+            <div class="col">
+                <ion-list>
+                    <ion-item class="item item-divider item-positive">
+                        My Company
+                    </ion-item>
+                    <ion-item class="item-avatar item-button-right" ng-if="company.admin.FirebaseToken === localToken"  ng-repeat="company in companies">
+
+                        <h2>Name ::         {{company.name}}</h2>
+                        <p>Email::          {{company.email}}</p>
+                        <p>Admin ::         {{company.admin.Name}}</p>
+                        <p>Description::    {{company.description}}</p>
+
+                        <button ui-sref="edit/:" class="button icon-right ion-settings button-positive">Settings</button>
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>-->

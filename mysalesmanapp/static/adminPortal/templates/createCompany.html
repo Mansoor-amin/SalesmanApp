@@ -1,0 +1,27 @@
+<ion-view view-title="Create Company">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Company Name</span>
+                <input type="text" placeholder="Company Name" ng-model="company.Name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Phone No.</span>
+                <input type="number" placeholder="Phone No." ng-model="company.PhoneNo">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email" ng-model="company.Email">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Descrioption</span>
+                <textarea placeholder="Description" ng-model="company.Description"></textarea>
+            </label>
+            <div class="button-bar">
+                <button class="button button-positive" ng-click="CreateCompany()">Create Company</button>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
